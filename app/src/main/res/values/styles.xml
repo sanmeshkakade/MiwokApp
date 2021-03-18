@@ -21,7 +21,7 @@
     </style>
 
     <!-- Style for a category of vocabulary words -->
-    <style name="CategoryStyle">
+    <style name="CategoryStyle" parent="Widget.AppCompat.TextView">
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">@dimen/list_item_height</item>
         <item name="android:gravity">center_vertical</item>
@@ -29,6 +29,14 @@
         <item name="android:textColor">@android:color/white</item>
         <item name="android:textStyle">bold</item>
         <item name="android:textAppearance">?android:textAppearanceMedium</item>
+    </style>
+    <style name="Tabs" parent="Widget.Design.TabLayout">
+        <item name = "android:background">@color/primary_color</item>
+        <item name="tabTextColor">@color/tab_font_inactive</item>
+        <item name="tabIndicatorColor">@color/tab_font_active</item>
+        <item name="tabSelectedTextColor">@color/tab_font_active</item>
+        <item name="tabMode">fixed</item>
+
     </style>
 
 </resources>

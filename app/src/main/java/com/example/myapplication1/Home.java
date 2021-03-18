@@ -9,6 +9,8 @@ import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.viewpager.widget.ViewPager;
 
+import com.google.android.material.tabs.TabLayout;
+
 public class Home extends AppCompatActivity {
 
     @Override
@@ -25,6 +27,9 @@ public class Home extends AppCompatActivity {
 
         //set the adapter onto the view pager
         viewPager.setAdapter(adapter);
+
+        TabLayout tabLayout = (TabLayout)findViewById(R.id.sliding_tabs);
+        tabLayout.setupWithViewPager(viewPager);
 
 //        //finding view by id
 //        TextView numbers = findViewById(R.id.numbers);

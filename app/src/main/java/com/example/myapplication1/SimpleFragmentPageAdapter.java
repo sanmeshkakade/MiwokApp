@@ -3,6 +3,7 @@ package com.example.myapplication1;
 import android.view.View;
 
 import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentPagerAdapter;
@@ -10,8 +11,9 @@ import androidx.fragment.app.FragmentPagerAdapter;
 import org.jetbrains.annotations.NotNull;
 
 public class SimpleFragmentPageAdapter extends FragmentPagerAdapter {
+    private final String[] tabTitles = new String[] {"NUMBERS","COLORS","FAMILY", "PHRASES"};
 
-    public SimpleFragmentPageAdapter(FragmentManager fm){super(fm);}
+    public SimpleFragmentPageAdapter(FragmentManager fm){super(fm,BEHAVIOR_RESUME_ONLY_CURRENT_FRAGMENT);}
 
 
     @Override
@@ -32,5 +34,10 @@ public class SimpleFragmentPageAdapter extends FragmentPagerAdapter {
     @Override
     public int getCount() {
         return 4;
+    }
+
+    @Override
+    public CharSequence getPageTitle(int position) {
+        return tabTitles[position];
     }
 }
