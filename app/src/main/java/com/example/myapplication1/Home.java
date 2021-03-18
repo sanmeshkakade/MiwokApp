@@ -7,6 +7,7 @@ import android.widget.TextView;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.viewpager.widget.ViewPager;
 
 public class Home extends AppCompatActivity {
 
@@ -16,49 +17,58 @@ public class Home extends AppCompatActivity {
         // Set the content of the activity to use the activity_main.xml layout file
         setContentView(R.layout.home);
 
-        //finding view by id
-        TextView numbers = findViewById(R.id.numbers);
-        TextView familiy = findViewById(R.id.family);
-        TextView colors = findViewById(R.id.colors);
-        TextView phrases = findViewById(R.id.phrases);
+        //Find the view pager that allows user to swipe between fragments
+        ViewPager viewPager = (ViewPager) findViewById(R.id.viewpager);
 
-        //setting onclick method
-        numbers.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                //creating intent to numbers activity
-                Intent numberIntent = new Intent(Home.this,NumbersActivity.class);
-                //start activity
-                startActivity(numberIntent);
-            }
-        });
-        phrases.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                //creating intent to phrase activity
-                Intent phraseIntent = new Intent(Home.this,PhrasesActivity.class);
-                //start activity
-                startActivity(phraseIntent);
-            }
-        });
-        familiy.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                //creating intent to familiy activity
-                Intent familiyIntent = new Intent(Home.this,FamiliyMembersActivity.class);
-                //start activity
-                startActivity(familiyIntent);
-            }
-        });
-        colors.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                //creating intent to colors activity
-                Intent colorsIntent = new Intent(Home.this,ColorsActivity.class);
-                //start activity
-                startActivity(colorsIntent);
-            }
-        });
+        //Create an adapter that knows which fragment shold be shown on each page
+        SimpleFragmentPageAdapter adapter = new SimpleFragmentPageAdapter(getSupportFragmentManager());
+
+        //set the adapter onto the view pager
+        viewPager.setAdapter(adapter);
+
+//        //finding view by id
+//        TextView numbers = findViewById(R.id.numbers);
+//        TextView familiy = findViewById(R.id.family);
+//        TextView colors = findViewById(R.id.colors);
+//        TextView phrases = findViewById(R.id.phrases);
+//
+//        //setting onclick method
+//        numbers.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                //creating intent to numbers activity
+//                Intent numberIntent = new Intent(Home.this,NumbersActivity.class);
+//                //start activity
+//                startActivity(numberIntent);
+//            }
+//        });
+//        phrases.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                //creating intent to phrase activity
+//                Intent phraseIntent = new Intent(Home.this,PhrasesActivity.class);
+//                //start activity
+//                startActivity(phraseIntent);
+//            }
+//        });
+//        familiy.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                //creating intent to familiy activity
+//                Intent familiyIntent = new Intent(Home.this,FamiliyMembersActivity.class);
+//                //start activity
+//                startActivity(familiyIntent);
+//            }
+//        });
+//        colors.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                //creating intent to colors activity
+//                Intent colorsIntent = new Intent(Home.this,ColorsActivity.class);
+//                //start activity
+//                startActivity(colorsIntent);
+//            }
+//        });
 
 
     }

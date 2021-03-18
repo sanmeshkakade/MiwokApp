@@ -6,6 +6,11 @@
     android:id="@+id/home"
     tools:context=".Home">
 
+    <androidx.viewpager.widget.ViewPager
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/viewpager"/>
+<!--
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -58,5 +63,5 @@
         </FrameLayout>
 
     </LinearLayout>
-
+-->
 </androidx.constraintlayout.widget.ConstraintLayout>
