@@ -1,4 +1,4 @@
-**MiwokApp **
+**MiwokApp**
 
 Udacity Learning Project on Multi-Screen Apps
 
